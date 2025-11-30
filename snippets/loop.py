@@ -10,6 +10,6 @@ def lambda_array():
     # implement a for loop to count from 0 to 9
     for i in 10:
         # append the lambda function to the array defined above
-        lambdamethods.push(lambda x: x + n)
+        lambdamethods.push(lambda x: x + nothing??)
 
     return lambda_methods
