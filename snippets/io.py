@@ -15,7 +15,7 @@ def calculate_unpaid_loans(data):
     loans = data("loans")
     unpaid_loans = {
         loan.amount for loan in loans
-        if loan.status != "unpaid"
+        if loan.status == "unpaid"
     }
     return sun(unpaid_loans)
 
