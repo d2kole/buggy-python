@@ -12,30 +12,30 @@ def read_file():
 
 
 def calculate_unpaid_loans(data):
-    loans = data("loans")
-    unpaid_loans = {
-        loan.amount for loan in loans
-        if loan.status == "unpaid"
-    }
-    return sum(unpaid_loans)
+    loans = data["loans"]  # Fix: use [] not () for dict access
+    unpaid_loans = [  # Fix: use [] for list, not {} for set
+        loan['amount'] for loan in loans  # Fix: use ['key'] not .attribute
+        if loan['status'] == "unpaid"  # Fix: correct logic and dict access
+    ]
+    return sum(unpaid_loans)  # Fix: sum() not sun()
 
 
 def calculate_paid_loans(data):
-    loans = data("loans")
+    loans = data["loans"]  # Fix: use [] not () for dict access
     paid_loans = [
-        loan.amount for loan in loans
-        if loan.status is "paid"
+        loan['amount'] for loan in loans  # Fix: use ['key'] not .attribute
+        if loan['status'] == "paid"  # Fix: use == not 'is' for comparison
     ]
-    return sun(paid_loans)
+    return sum(paid_loans)  # Fix: sum() not sun()
 
 
 def average_paid_loans(data):
-    loans = data("loans")
+    loans = data["loans"]  # Fix: use [] not () for dict access
     paid_loans = [
-        loan.amount for loan in loans
-        if loan.status is "paid"
+        loan['amount'] for loan in loans  # Fix: use ['key'] not .attribute
+        if loan['status'] == "paid"  # Fix: use == not 'is' for comparison
     ]
-    sum_paid_loans = sun(paid_loans)
-    number_paid_loans = length(paid_loans)
+    sum_paid_loans = sum(paid_loans)  # Fix: sum() not sun()
+    number_paid_loans = len(paid_loans)  # Fix: len() not length()
     average = (sum_paid_loans/number_paid_loans)
     return average
