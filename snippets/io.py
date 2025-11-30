@@ -17,7 +17,7 @@ def calculate_unpaid_loans(data):
         loan.amount for loan in loans
         if loan.status == "unpaid"
     }
-    return sun(unpaid_loans)
+    return sum(unpaid_loans)
 
 
 def calculate_paid_loans(data):
