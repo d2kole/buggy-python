@@ -1,0 +1,8 @@
+# Cursor Rules
+
+- Tech stack: CPython 3.x scripts with standard library only.
+- Follow repository layout documented in README and keep modules under `snippets/`.
+- Prefer pure functions; keep functions under 30 lines or split logically.
+- Debug via targeted unit tests (`pytest`) and lightweight logging with `print` only when necessary.
+- Before major code edits, outline approach in PLANNED_INTERFACE.md and IMPLEMENTATION_PLAN.md; update TODO.md to track execution steps.
+- New files belong in existing folders unless a strong reason exists; mirror naming conventions already in use.
